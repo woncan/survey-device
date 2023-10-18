@@ -39,7 +39,7 @@ func hcSearchResult(_ deviceNameList: [String]!, isDone: Bool) {
 ```Swift
   util?.toDisconnect()
 ```
-##### HCUtilDelegate
+#### HCUtilDelegate
 连接设备成功
 ```Swift
 func hcDeviceConnected(_ index: Int) {
