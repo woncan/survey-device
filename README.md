@@ -77,7 +77,21 @@ func hcDeviceDisconnected() {
         }
     }
 ```
-#### 差分配置
+#### 自带差分配置
+  当前设备如果支持自带差分功能会在连接上蓝牙后去主动发起差分连接，无需其他配置就可以实现固定解。
+###### 自带差分的状态
+  ```Swift
+    var util: HCUtil?
+    self.util?.hasDeviceDiff //是否支持自带差分功能
+    self.util?.isConnectDeviceDiff //自带差分是否连接
+```
+###### 自带差分的连接与断开
+  ```Swift
+   self.util?.toConnectDeviceDiff() // 发起自带差分连接(需要判断设备是否支持该功能)
+    self.util?.toDisconnectDeviceDiff() // 断开自带差分连接
+```
+
+#### Ntrip账号差分配置
 #### 差分管理类初始化
 ```Swift
     var socketUtil: HCSocketUtil?
