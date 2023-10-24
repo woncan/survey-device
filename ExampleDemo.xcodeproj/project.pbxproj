@@ -10,8 +10,8 @@
 		53C10696CA3BEFAD3251EE63 /* Pods_ExampleDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 196067A9438A78C84536867D /* Pods_ExampleDemo.framework */; };
 		F8A697492ADE19640076F587 /* DiffConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A697472ADE19640076F587 /* DiffConfigViewController.swift */; };
 		F8A6974A2ADE19640076F587 /* DiffConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8A697482ADE19640076F587 /* DiffConfigViewController.xib */; };
-		F8AA51AA2ADD0C27008A04CE /* LiteRTK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1BCB02AD7E2B6002F0BA5 /* LiteRTK.framework */; };
-		F8AA51AB2ADD0C27008A04CE /* LiteRTK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1BCB02AD7E2B6002F0BA5 /* LiteRTK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F8A929F52ADF6BFC00DBE595 /* LiteRTK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1BCB02AD7E2B6002F0BA5 /* LiteRTK.framework */; };
+		F8A929F62ADF6BFC00DBE595 /* LiteRTK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8B1BCB02AD7E2B6002F0BA5 /* LiteRTK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F8AA51B72ADD22D5008A04CE /* BleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AA51B52ADD22D5008A04CE /* BleListView.swift */; };
 		F8AA51B82ADD22D5008A04CE /* BleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AA51B62ADD22D5008A04CE /* BleListCell.swift */; };
 		F8AA51BB2ADD264F008A04CE /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AA51B92ADD264F008A04CE /* UILabel+Extension.swift */; };
@@ -47,13 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F8AA51AC2ADD0C28008A04CE /* Embed Frameworks */ = {
+		F8A929F72ADF6BFC00DBE595 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F8AA51AB2ADD0C27008A04CE /* LiteRTK.framework in Embed Frameworks */,
+				F8A929F62ADF6BFC00DBE595 /* LiteRTK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8AA51AA2ADD0C27008A04CE /* LiteRTK.framework in Frameworks */,
+				F8A929F52ADF6BFC00DBE595 /* LiteRTK.framework in Frameworks */,
 				53C10696CA3BEFAD3251EE63 /* Pods_ExampleDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,8 +223,8 @@
 				F8B1BC782AD7E275002F0BA5 /* Sources */,
 				F8B1BC792AD7E275002F0BA5 /* Frameworks */,
 				F8B1BC7A2AD7E275002F0BA5 /* Resources */,
-				F8AA51AC2ADD0C28008A04CE /* Embed Frameworks */,
 				FE22E60DD040E90C6B8E04BF /* [CP] Embed Pods Frameworks */,
+				F8A929F72ADF6BFC00DBE595 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

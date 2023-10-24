@@ -22,11 +22,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<HCUtilDelegate> delegate;
 /// 是否记录并传回卫星数据。false: 不回传 HCDeviceInfoBaseModel 中的 satelliteRecordModelList 参数
 @property (nonatomic, assign) BOOL enableSatelliteRecord;
+/// 是否自带差分服务
+@property (nonatomic, assign, readonly) BOOL hasDeviceDiff;
+/// 是否连接上了设备自带差分连接
+@property (nonatomic, assign, readonly) BOOL isConnectDeviceDiff;
 /// 连接上的设备类型
 @property (nonatomic, assign, readonly) HCDeviceType deviceType;
 /// 设备索引
 @property (nonatomic, assign, readonly) NSInteger deviceIndex;
-
+/// 差分坐标类型（使用设备自带差分时配置，其他情况下忽略）
+@property (nonatomic, assign) HCCoordType coordType;
 /// 注册代理
 /// - Parameter delegate: HCUtilDelegate
 - (instancetype)initWithDelegate:(id<HCUtilDelegate>)delegate;
@@ -58,6 +63,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameter datas: 数据包
 - (void)toSendDatas:(NSArray <NSData *>*)datas;
 
+/// 停止设备自带差分
+- (void)toDisconnectDeviceDiff;
+/// 连接设备自带差分
+- (void)toConnectDeviceDiff;
 
 // ----------------------------仅isNewBle的RTK可以调用----------------------------
 /// 是否使能NMEA输出，enable：true开，false关。nmeaType：掩码白名单

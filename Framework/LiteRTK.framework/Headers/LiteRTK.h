@@ -14,7 +14,7 @@ FOUNDATION_EXPORT double LiteRTKVersionNumber;
 FOUNDATION_EXPORT const unsigned char LiteRTKVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <LiteRTK/PublicHeader.h>
-
+#import <LiteRTK/HCDefine.h>
 #import <LiteRTK/HCSocketUtil.h>
 #import <LiteRTK/HCDiffModel.h>
 #import <LiteRTK/RTKController.h>

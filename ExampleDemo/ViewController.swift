@@ -23,6 +23,8 @@ class ViewController: UIViewController ,HCUtilDelegate{
     @IBOutlet weak var diffDelayLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var deviceDiffLabel: UILabel!
+    @IBOutlet weak var deviceDiffStatusLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -74,6 +76,23 @@ class ViewController: UIViewController ,HCUtilDelegate{
         self.present(diffConfigVC, animated: true)
     }
     
+    @IBAction func toConnectDeviceDiffEvent(_ sender: Any) {
+        guard let hasDeviceDiff = self.util?.hasDeviceDiff else {
+            return
+        }
+        guard let isConnectDeviceDiff = self.util?.isConnectDeviceDiff else {
+            return
+        }
+        if !isConnectDeviceDiff {
+            self.util?.toConnectDeviceDiff()
+
+        }
+    }
+    
+    @IBAction func toDisconnectDeviceDiffEvent(_ sender: Any) {
+        self.util?.toDisconnectDeviceDiff()
+    }
+    
     func setData(){
         diffConfigVC.nmeaSourceText = deviceModel?.nmeaSourceText
         diffConfigVC.util = self.util
@@ -94,6 +113,8 @@ class ViewController: UIViewController ,HCUtilDelegate{
         diffDelayLabel.text = "\(self.deviceModel?.diffDelayTime ?? "")"
         longitudeLabel.text = "\(self.deviceModel?.longitude ?? "")"
         latitudeLabel.text = "\(self.deviceModel?.latitude ?? "")"
+        deviceDiffLabel.text = "\(self.util!.hasDeviceDiff ? "是":"否")"
+        deviceDiffStatusLabel.text = "\(self.util!.isConnectDeviceDiff ? "已连接" : "未连接")"
     }
 
     // MARK: 开始监听
@@ -153,7 +174,7 @@ extension ViewController {
     
     // MARK: 搜索结果
     func hcSearchResult(_ deviceNameList: [String]!, isDone: Bool) {
-        print("搜索到的设备：\(deviceNameList ?? [])")
+        NSLog("搜索到的设备：\(deviceNameList ?? [])")
         if deviceNameList.count > 0 {
             self.list = deviceNameList
             showPeripheralList(tempPeripheralList: deviceNameList!)

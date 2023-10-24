@@ -36,6 +36,12 @@ typedef NS_ENUM(NSUInteger, HCStatusError) {
     Unknown                        // 未知类型错误
 };
 
+/// 差分坐标枚举类型
+typedef NS_ENUM(NSUInteger,HCCoordType){
+    WGS84 = 0,//默认
+    CGCS2000
+};
+
 @protocol HCUtilDelegate <NSObject>
 
 @optional
