@@ -19,7 +19,6 @@
 		F8AA51BE2ADD2726008A04CE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AA51BD2ADD2725008A04CE /* String+Extension.swift */; };
 		F8AA51C02ADD276E008A04CE /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AA51BF2ADD276E008A04CE /* UITableView+Extension.swift */; };
 		F8B1BC802AD7E275002F0BA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1BC7F2AD7E275002F0BA5 /* AppDelegate.swift */; };
-		F8B1BC822AD7E275002F0BA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1BC812AD7E275002F0BA5 /* SceneDelegate.swift */; };
 		F8B1BC842AD7E275002F0BA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1BC832AD7E275002F0BA5 /* ViewController.swift */; };
 		F8B1BC872AD7E275002F0BA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B1BC852AD7E275002F0BA5 /* Main.storyboard */; };
 		F8B1BC892AD7E277002F0BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B1BC882AD7E277002F0BA5 /* Assets.xcassets */; };
@@ -75,7 +74,6 @@
 		F8AA51BF2ADD276E008A04CE /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		F8B1BC7C2AD7E275002F0BA5 /* ExampleDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B1BC7F2AD7E275002F0BA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8B1BC812AD7E275002F0BA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F8B1BC832AD7E275002F0BA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F8B1BC862AD7E275002F0BA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8B1BC882AD7E277002F0BA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				F8B1BC7F2AD7E275002F0BA5 /* AppDelegate.swift */,
-				F8B1BC812AD7E275002F0BA5 /* SceneDelegate.swift */,
 				F8B1BC832AD7E275002F0BA5 /* ViewController.swift */,
 				F8B1BC852AD7E275002F0BA5 /* Main.storyboard */,
 				F8A697472ADE19640076F587 /* DiffConfigViewController.swift */,
@@ -399,7 +396,6 @@
 				F8AA51BB2ADD264F008A04CE /* UILabel+Extension.swift in Sources */,
 				F8B1BC802AD7E275002F0BA5 /* AppDelegate.swift in Sources */,
 				F8AA51B72ADD22D5008A04CE /* BleListView.swift in Sources */,
-				F8B1BC822AD7E275002F0BA5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +581,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExampleDemo/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "App需要使用蓝牙权限，用于连接蓝牙设备";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -622,6 +619,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExampleDemo/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "App需要使用蓝牙权限，用于连接蓝牙设备";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum RTKConnectType: Int {
+    case RTK         // RTK定位
+    case EA         // MFI连接
+    case GPS         // 系统定位
+}
+
 class ViewController: UIViewController ,HCUtilDelegate{
     
     var list: [String] = [String]()
@@ -15,8 +21,11 @@ class ViewController: UIViewController ,HCUtilDelegate{
     var deviceModel: HCDeviceInfoBaseModel?
     var bleListView: BleListView?
     var searchButton:UIButton!
+    var searchEAButton:UIButton!
     var DiffButton:UIButton!
     var diffConfigVC:DiffConfigViewController!
+    var currentConnectType:RTKConnectType?
+    
     @IBOutlet weak var deviceNameLabel: UILabel!
     @IBOutlet weak var electricLabel: UILabel!
     @IBOutlet weak var diffStatusLabel: UILabel!
@@ -43,6 +52,15 @@ class ViewController: UIViewController ,HCUtilDelegate{
         searchButton.addTarget(self, action: #selector(searchBle), for: .touchUpInside)
         view.addSubview(searchButton)
         
+        searchEAButton = UIButton(type: .custom)
+        searchEAButton.setTitle("搜索MFI", for: .normal)
+        searchEAButton.setTitleColor(.white, for: .normal)
+        searchEAButton.backgroundColor = "06A7FF".color()
+        searchEAButton.layer.cornerRadius = 5
+        searchEAButton.layer.masksToBounds = true
+        searchEAButton.addTarget(self, action: #selector(searchEA), for: .touchUpInside)
+        view.addSubview(searchEAButton)
+        
         DiffButton = UIButton(type: .custom)
         DiffButton.setTitle("差分配置", for: .normal)
         DiffButton.setTitleColor(.white, for: .normal)
@@ -65,9 +83,21 @@ class ViewController: UIViewController ,HCUtilDelegate{
             make.width.equalTo(150)
             make.height.equalTo(40)
         }
+        
+        searchEAButton.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(30)
+            make.bottom.equalToSuperview().offset(-50)
+            make.width.equalTo(150)
+            make.height.equalTo(40)
+        }
     }
     
     @objc func searchBle(){
+        self.currentConnectType = .RTK
+        startListening()
+    }
+    @objc func searchEA(){
+        self.currentConnectType = .EA
         startListening()
     }
     
@@ -136,8 +166,11 @@ class ViewController: UIViewController ,HCUtilDelegate{
     public func toSearch() {
         // 清空缓存
         list.removeAll()
-        
-        util?.toSearchDevice(with: .BleRTK)
+        if self.currentConnectType == .RTK{
+            util?.toSearchDevice(with: .BleRTK)
+        }else if self.currentConnectType == .EA{
+            util?.toSearchDevice(with: .EaRTK)
+        }
     }
     
     // MARK: 断开连接
