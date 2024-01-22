@@ -15,7 +15,8 @@ LiteRTK.framework目前是基于`Objective-C`开发，如果接入的项目也�
 ###### 1.3 MFi设备支持（如不需要可忽略以下配置）
 如需增加项目对MFi设备的连接支持需要如下配置：
 项目Info.plist添加<br>
-```<key>UISupportedExternalAccessoryProtocols</key>
+```
+<key>UISupportedExternalAccessoryProtocols</key>
 	<array>
 		<string>com.woncan.data</string>
 	</array>
