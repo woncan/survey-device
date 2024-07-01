@@ -12,8 +12,20 @@
   ![](https://github.com/WoncanWct/ImageCache/blob/main/frameworkEmbed.jpg)
 ###### 1.2 引用头文件`#import <LiteRTK/LiteRTK.h>`
 LiteRTK.framework目前是基于`Objective-C`开发，如果接入的项目也是OC环境可以直接引入`#import <LiteRTK/LiteRTK.h>`开始使用，<br>如果是`Swift`环境需要在桥接文件`bridging-header`里面引入`#import <LiteRTK/LiteRTK.h>`
-
-
+###### 1.3 MFi设备支持（如不需要可忽略以下配置）
+如需增加项目对MFi设备的连接支持需要如下配置：
+项目Info.plist添加<br>
+```
+<key>UISupportedExternalAccessoryProtocols</key>
+	<array>
+		<string>com.woncan.data</string>
+	</array>
+```
+Background Models 支持<br>
+![](https://github.com/WoncanWct/ImageCache/blob/main/BackgroundModes.jpg)
+<br>
+<br>
+<br>
 #### 使用
 #### 蓝牙管理类初始化
 ```Swift
@@ -23,7 +35,8 @@ LiteRTK.framework目前是基于`Objective-C`开发，如果接入的项目也�
 #### 搜索设备
 使用以下方式搜索设备
 ```Swift
-  util?.toSearchDevice(with: .BleRTK)
+  util?.toSearchDevice(with: .BleRTK)//蓝牙rtk
+  util?.toSearchDevice(with: .EaRTK)//Mfi rtk
 ```
 搜索设备结果返回
 ```Swift
