@@ -32,6 +32,8 @@ class ViewController: UIViewController ,HCUtilDelegate{
     @IBOutlet weak var diffDelayLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var DxyLabel: UILabel!
+    @IBOutlet weak var DzLabel: UILabel!
     @IBOutlet weak var deviceDiffLabel: UILabel!
     @IBOutlet weak var deviceDiffStatusLabel: UILabel!
     
@@ -145,6 +147,8 @@ class ViewController: UIViewController ,HCUtilDelegate{
         latitudeLabel.text = "\(self.deviceModel?.latitude ?? "")"
         deviceDiffLabel.text = "\(self.util!.hasDeviceDiff ? "是":"否")"
         deviceDiffStatusLabel.text = "\(self.util!.isConnectDeviceDiff ? "已连接" : "未连接")"
+        DxyLabel.text = "Dxy: " + "\(self.deviceModel?.dxy ?? "")"
+        DzLabel.text = "Dz: " + "\(self.deviceModel?.dz ?? "")"
     }
 
     // MARK: 开始监听
@@ -212,8 +216,6 @@ extension ViewController {
             self.list = deviceNameList
             showPeripheralList(tempPeripheralList: deviceNameList!)
         }
-
-
     }
     
     // MARK: 连接成功

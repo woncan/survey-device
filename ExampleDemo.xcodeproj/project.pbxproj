@@ -579,6 +579,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Framework",
 				);
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExampleDemo/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "App需要使用蓝牙权限，用于连接蓝牙设备";
@@ -617,6 +618,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Framework",
 				);
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExampleDemo/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "App需要使用蓝牙权限，用于连接蓝牙设备";

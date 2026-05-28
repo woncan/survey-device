@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DiffConfigViewController: UIViewController,HCSocketUtilDelegate {
+class DiffConfigViewController: UIViewController {
     var socketUtil: HCSocketUtil?
     private var timer: Timer?
     var nmeaSourceText: String? // 差分原始数据
@@ -54,7 +54,7 @@ class DiffConfigViewController: UIViewController,HCSocketUtilDelegate {
     
 }
 // MARK: HCSocketUtilDelegate
-extension DiffConfigViewController {
+extension DiffConfigViewController:HCSocketUtilDelegate {
     // MARK: 差分登录成功
     func loginSuccess(_ tcpUtil: HCSocketUtil) {
         if timer == nil {
