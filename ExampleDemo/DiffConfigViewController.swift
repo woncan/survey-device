@@ -48,10 +48,6 @@ class DiffConfigViewController: UIViewController {
         self.socketUtil?.replaceDiffModel(model)
         self.socketUtil?.getMountPoints()
     }
-    
-    
-
-    
 }
 // MARK: HCSocketUtilDelegate
 extension DiffConfigViewController:HCSocketUtilDelegate {
